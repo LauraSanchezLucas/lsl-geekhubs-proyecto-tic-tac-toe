@@ -1,6 +1,3 @@
-body{
-    background-color: rgb(225, 232, 232);
-}
 .box{
     height: 80vh;
 }
@@ -20,13 +17,13 @@ body{
     background-color: coral;
 }
 
-.container{
+/* .container{
     background-color: deepskyblue;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr  ;
     grid-template-rows: 2fr 2fr 2fr ;
     /* border: 1px solid black; */
-}
+} */
 
 .firts{
     padding-top: 6vh;
