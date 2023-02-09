@@ -5,7 +5,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 /* Pag. index */
-.main{
+.all{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,9 +24,9 @@ body{
 button a{
     text-decoration: none;
     color: black;
-    font: oblique 120% cursive;
+    font: oblique cursive;
 }
-/* Navbar - logo*/
+/* Navbar - logo */
 .navbar-logo{
     height: 15vh;
     width: 100%;
@@ -52,6 +52,17 @@ button a{
     height: 85vh;
     width: 100%;
 } 
+/* Pag. Select Player */
+.play{
+    width: 10em;
+}
+
+@media (min-width: 1005px){
+    .card{
+        height: 20vh;
+        width: 70vw;
+    }
+}
 /* board */
 .box1{
     height: 70vh;
@@ -81,6 +92,12 @@ button a{
 }
 /* cell */
 .cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-ok{
     display: flex;
     justify-content: center;
     align-items: center;
