@@ -63,6 +63,9 @@ button a{
         width: 70vw;
     }
 }
+input{
+    width: 100%;
+}
 /* board */
 .box1{
     height: 70vh;
