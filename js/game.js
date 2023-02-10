@@ -1,13 +1,86 @@
-//Capturo los div que mostrarán los nombres
 
-let player1 = document.getElementById("player1");
-let player2 = document.getElementById("player2");
+const PlayerName = () => {
+    document.getElementById("P1").innerHTML = sessionStorage.getItem("name1")
+    document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
+}
 
-//Leo los datos del sessionStorage y los guardo en una variable
+PlayerName();
 
-let datosSesion = JSON.parse(sessionStorage.getItem("playersInfo"));
 
-//Aplico esos datos a los dos divs
 
-player1.innerHTML = `${datosSesion.player1}`;
-player2.innerHTML = `${datosSesion.player2}`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let origBoard;
+// const firstPlayer = "X";
+// const secondPlayer = "O";
+// const winCombos = [
+//     [0, 1, 2],
+//     [3, 4, 5],
+//     [6, 7, 8],
+//     [0, 3, 6],
+//     [1, 4, 7],
+//     [2, 5, 8],
+//     [0, 4, 8],
+//     [6, 4, 2],
+// ]
+
+// const cells = document.querySelectorAll('.cell');
+
+// // empezamos el juego
+// const startGame() {
+
+// }

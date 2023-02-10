@@ -56,15 +56,8 @@ button a{
 .play{
     width: 10em;
 }
-
-@media (min-width: 1005px){
-    .card{
-        height: 20vh;
-        width: 70vw;
-    }
-}
 input{
-    width: 100%;
+    width:100%;
 }
 /* board */
 .box1{
