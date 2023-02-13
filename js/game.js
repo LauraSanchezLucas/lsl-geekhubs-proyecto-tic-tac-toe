@@ -22,7 +22,7 @@ const changeTurn = () =>{
 }
 //  funcion para marcar la celda seleccionada
 const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
-    if(board[i] === 0){    //si la celda esta vacia realizaremos lo siguiente
+    if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
         board[id]= turn              //almacenamos el turno sea la X o O
         document.getElementById(id).innerHTML = turn //insertamos el turno en la celda
         changeTurn()
