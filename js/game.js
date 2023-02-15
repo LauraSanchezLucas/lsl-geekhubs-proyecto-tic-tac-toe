@@ -33,6 +33,7 @@ const PressClick = (position) =>{
     }
 }
 
+
 // funcion para validar ganador
 let letra = ""
 const checkWinner = () =>{
@@ -51,3 +52,14 @@ const checkWinner = () =>{
         if(board[2] == letra && board[4] == letra && board[6]== letra){MostrarGanador(letra)}
     }
 }
+
+// mostrar ganador
+
+const MostrarGanador = (letra) =>{
+    if(letra == 'X'){
+        window.location.href ="../pages/winner.html"
+    }else if(letra == 'O'){
+      
+        window.location.href ="../pages/winner.html"
+    }else{}
+    }
