@@ -61,8 +61,8 @@ input{
 }
 /* board */
 .box1{
-    height: 70vh;
-    width: 50vw;
+    height: 50vh;
+    width: 50vh;
 }
 @media (max-width: 400px){
     .box1{
