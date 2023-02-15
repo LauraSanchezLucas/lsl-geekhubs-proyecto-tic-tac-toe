@@ -11,7 +11,14 @@ let counter = 0;
 // funcion para cambiar de turno
 const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
-        turn = (turn == 'X') ? 'O' : 'X';
+        turn = (turn == 'X') ? 'O': 'X';
+        if(turn == 'X'){
+            document.getElementById('first').innerHTML = turn
+            document.getElementById('second').innerHTML = ""
+        }else if(turn== 'O'){
+            document.getElementById('second').innerHTML = turn 
+            document.getElementById('first').innerHTML = ""
+        }
 };
 
 //  funcion para marcar la celda seleccionada

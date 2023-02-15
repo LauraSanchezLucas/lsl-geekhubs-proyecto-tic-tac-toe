@@ -6,7 +6,7 @@ const startGame = () => {
     let player1 = document.getElementById("P1").value;
     let player2 = document.getElementById("P2").value;
     // plateo una condicion para descartar que los inputs se queden vacios
-    if(player1 !="" && player2 !=""){
+    if(player1 !="" && player2 !="" && player1 != player2){
         // guardo los value en session storage para ser recogidos en cualquier momento
         sessionStorage.setItem('name1', player1);
         sessionStorage.setItem('name2', player2);
