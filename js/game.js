@@ -4,35 +4,38 @@ const PlayerName = () => {
     document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
 }
 PlayerName();
+
 let board = [0,0,0,0,0,0,0,0,0];
+
 //inicia el juego con X
 let turn = 'X';     
 let counter = 0;
+
 // funcion para cambiar de turno
 const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
-        turn = (turn == 'X') ? 'O': 'X';
+        turn = (turn == 'X') ? 'O': 'X'; 
         if(turn == 'X'){
             document.getElementById('first').innerHTML = turn
-            document.getElementById('second').innerHTML = ""
+            document.getElementById('second').innerHTML = ""         
         }else if(turn== 'O'){
             document.getElementById('second').innerHTML = turn 
             document.getElementById('first').innerHTML = ""
         }
 };
 
+
 //  funcion para marcar la celda seleccionada
 const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
    if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
         board[id]= turn              //almacenamos el turno sea la X o O
         document.getElementById(id).innerHTML = turn //insertamos el turno en la celda
-        
     }
 }
 //llamamos a la funcion de marcar celda
 
 const PressClick = (position) =>{
-    if(counter<6){
+    if(counter<9){
         markCell(position) 
         checkWinner()
         changeTurn()
@@ -44,7 +47,6 @@ const PressClick = (position) =>{
 // funcion para validar ganador
 let letra = ""
 const checkWinner = () =>{
-    // let letra = ""
     let letras = ["X","O"]
     for(a=0; a<letras.length; a++){
         letra = letras[a]
@@ -66,7 +68,16 @@ const MostrarGanador = (letra) =>{
     if(letra == 'X'){
         window.location.href ="../pages/winner.html"
     }else if(letra == 'O'){
-      
         window.location.href ="../pages/winner.html"
     }else{}
     }
+
+
+
+
+
+
+
+
+
+
