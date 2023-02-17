@@ -18,9 +18,17 @@
     <nav class="navbar-logo navbar-logo-game">
         <a href="../index.html" class="logo"></a>
     </nav>
-    <div class="container-fluid box">
+    <div class="container-fluid box justify-content-center align-items-center d-flex">
         <div class="row justify-content-center align-items-center box">
-            <div class="col-12 col-lg-4 order-2">
+            <!-- <div class="ola col-8 text-center">
+                <div class="container-fluid">
+                    <p id="first"></p>
+                </div>
+            </div> -->
+            <!-- <div class="turn-now justify-content-center align-items-center d-flex">
+                <span><strong>Turn :</strong></span>
+            </div> -->
+            <div class="col-12 col-lg-4 order-2 d-flex justify-content-center align-items-center">
                 <div class="container box1 mt-3">
                     <div id="0" onclick="PressClick(0)" class="cell border-end border-dark border-3"></div> 
                     <div id="1" onclick="PressClick(1)" class="cell border-end border-dark border-3"></div>
@@ -35,20 +43,20 @@
             </div>
             <div class="col-8 col-lg-4 order-1 text-center">
                 <div class="container-fluid">
-                    <div class="card card1 mb-3 mt-3">
+                    <div class="card card1 card3 mb-3 mt-3">
                         <div class="card-body">
                             <h1><strong>x</strong></h1><h5 id="P1" class="card-title">Player 1</h5>
-                            <span><strong>Turn:</strong><p id="first"></p></span>
+                            <p id="first"></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-8 col-lg-4 order-3 text-center">
                 <div class="container-fluid">
-                    <div class=" container- fluid card card2 mb-3 mt-3">
+                    <div class="card card2 card3 mb-3 mt-3">
                         <div class="card-body">
                             <h1><strong>0</strong></h1><h5 id="P2" class="card-title">Player 2</h5>
-                            <span><strong>Turn:</strong><p id="second"></p></span>
+                            <p id="second"></p>
                         </div>
                     </div>
                 </div>

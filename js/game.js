@@ -8,18 +8,25 @@ PlayerName();
 let board = [0,0,0,0,0,0,0,0,0];
 
 //inicia el juego con X
-let turn = 'X';     
+let turn = true;     
 let counter = 0;
 
 // funcion para cambiar de turno
 const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
-        turn = (turn == 'X') ? 'O': 'X'; 
+    if(turn == true){
+        console.log("Turno X")
+        turn = false;
+    } else {
+        console.log("Turno O")
+        turn = true;
+    }
+        // turn = (turn == 'X') ? 'O': 'X'; 
         if(turn == 'X'){
-            document.getElementById('first').innerHTML = turn
+            document.getElementById('first').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
             document.getElementById('second').innerHTML = ""         
         }else if(turn== 'O'){
-            document.getElementById('second').innerHTML = turn 
+            document.getElementById('second').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`
             document.getElementById('first').innerHTML = ""
         }
 };
@@ -27,19 +34,38 @@ const changeTurn = () =>{
 
 //  funcion para marcar la celda seleccionada
 const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
-   if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
-        board[id]= turn              //almacenamos el turno sea la X o O
-        document.getElementById(id).innerHTML = turn //insertamos el turno en la celda
-    }
+   if(board[id] === 0){  
+    if(turn === true){ //si la celda esta vacia realizaremos lo siguiente
+        board[id]= "X"   
+        console.log("EL TURNO ES " + turn)          //almacenamos el turno sea la X o O
+        document.getElementById(id).innerHTML = "X" //insertamos el turno en la celda
+    } else {
+        board[id]= "O"   
+        console.log("EL TURNO ES " + turn)          //almacenamos el turno sea la X o O
+        document.getElementById(id).innerHTML = "O" 
+    }}
 }
 //llamamos a la funcion de marcar celda
 
 const PressClick = (position) =>{
-    if(counter<9){
+    if(counter<8){
+        console.log("Estoy contando hasta 8")
         markCell(position) 
         checkWinner()
         changeTurn()
         counter++
+        console.log(counter)
+    }else if(counter=9){
+        console.log('empieza counter 9')
+        console.log(counter)
+
+        markCell(position) 
+        checkWinner()
+        changeTurn()
+        console.log('checkwinner hecho')
+        setTimeout(function(){
+            window.location.href ="../pages/tie.html";
+            }, 1000);
     }
 }
 
@@ -71,6 +97,33 @@ const MostrarGanador = (letra) =>{
         window.location.href ="../pages/winner.html"
     }else{}
     }
+
+
+//     //variables
+// let tiempoEspera= 15;
+// let segundos= tiempoEspera;
+// let tiempoDiv= document.querySelector("#tiempo");
+// let descuento;
+// ​
+// //funciones
+// const resetTiempo=()=>{
+//   segundos= tiempoEspera;
+//   if(descuento){
+//     clearInterval(descuento);
+//   }
+//   tiempoDiv.innerHTML=(`<p>${segundos}</p>`);
+//   descuento= setInterval(cadaSegundo, 1000);
+// };
+// ​
+// const cadaSegundo=()=>{
+//   segundos--;
+//   tiempoDiv.innerHTML=(`<p>${segundos}</p>`);
+//   if(segundos==0){
+//     prompt("tiempo agotado");
+//   }
+// };
+// ​
+// resetTiempo();
 
 
 
