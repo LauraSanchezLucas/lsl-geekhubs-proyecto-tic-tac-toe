@@ -42,10 +42,7 @@ button a{
     width: 100%;
     height: 100%;
 }
-@media (max-width: 400px){
-    /* .navbar-logo-game{
-        display: none;
-    } */
+@media (max-width: 993px){
     .card3{
         display:none;
     } 
@@ -55,7 +52,16 @@ button a{
         margin: 0;
         padding: 0;
     }
+    .turn-now{
+        display:block;
+    }
 }
+@media (min-width: 994px){
+    .turn-now{
+        display:none;
+    }
+}
+
 /* Pag. winner */
 .winner{
     margin-top: 20vh;

@@ -8,20 +8,13 @@ PlayerName();
 let board = [0,0,0,0,0,0,0,0,0];
 
 //inicia el juego con X
-let turn = true;     
+let turn = 'X';     
 let counter = 0;
 
 // funcion para cambiar de turno
 const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
-    if(turn == true){
-        console.log("Turno X")
-        turn = false;
-    } else {
-        console.log("Turno O")
-        turn = true;
-    }
-        // turn = (turn == 'X') ? 'O': 'X'; 
+    turn = (turn == 'X') ? 'O': 'X'; 
         if(turn == 'X'){
             document.getElementById('first').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
             document.getElementById('second').innerHTML = ""         
@@ -33,18 +26,14 @@ const changeTurn = () =>{
 
 
 //  funcion para marcar la celda seleccionada
-const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
-   if(board[id] === 0){  
-    if(turn === true){ //si la celda esta vacia realizaremos lo siguiente
-        board[id]= "X"   
-        console.log("EL TURNO ES " + turn)          //almacenamos el turno sea la X o O
-        document.getElementById(id).innerHTML = "X" //insertamos el turno en la celda
-    } else {
-        board[id]= "O"   
-        console.log("EL TURNO ES " + turn)          //almacenamos el turno sea la X o O
-        document.getElementById(id).innerHTML = "O" 
-    }}
-}
+
+    const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
+        if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
+             board[id]= turn              //almacenamos el turno sea la X o O
+             document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
+         }
+     }
+
 //llamamos a la funcion de marcar celda
 
 const PressClick = (position) =>{
