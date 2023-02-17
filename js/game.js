@@ -16,10 +16,12 @@ const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
     turn = (turn == 'X') ? 'O': 'X'; 
         if(turn == 'X'){
-            document.getElementById('first').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
+            document.getElementById('first','first-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
+            document.getElementById('time').innerHTML = `X ${sessionStorage.getItem("name1")}`
             document.getElementById('second').innerHTML = ""         
         }else if(turn== 'O'){
-            document.getElementById('second').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`
+            document.getElementById('second', 'second-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`
+            document.getElementById('time').innerHTML = `O ${sessionStorage.getItem("name2")}`
             document.getElementById('first').innerHTML = ""
         }
 };
