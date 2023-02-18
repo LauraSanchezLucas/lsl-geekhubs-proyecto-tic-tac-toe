@@ -14,6 +14,11 @@ const startGame = () => {
         window.location.href ="../pages/game.html";
         // en caso que no se introduzca correcto me saldra un alert o no te dejara continuar con el programa
     }else{
-        alert('introduce un nombre')
+        document.getElementById('open-popup').style.visibility="visible";
+        document.getElementById('close-popup').onclick = function(){
+            document.getElementById('open-popup').style.visibility="hidden";
+        }
+       
     }
 }
+
