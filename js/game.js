@@ -31,8 +31,8 @@ const changeTurn = () =>{
 
     const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
         if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
-             board[id]= turn              //almacenamos el turno sea la X o O
-             document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
+            board[id]= turn              //almacenamos el turno sea la X o O
+            document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
          }
      }
 
@@ -47,20 +47,14 @@ const PressClick = (position) =>{
         counter++
         console.log(counter)
     }else if(counter=9){
-        console.log('empieza counter 9')
-        console.log(counter)
-
         markCell(position) 
         checkWinner()
         changeTurn()
-        console.log('checkwinner hecho')
         setTimeout(function(){
             window.location.href ="../pages/tie.html";
-            }, 1000);
+        }, 1000);
     }
 }
-
-
 // funcion para validar ganador
 let letra = ""
 const checkWinner = () =>{

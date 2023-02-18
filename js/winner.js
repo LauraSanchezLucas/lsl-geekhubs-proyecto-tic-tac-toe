@@ -9,4 +9,4 @@ jsConfetti.addConfetti()
 
 setTimeout(function(){
 window.location.href ="../index.html";
-}, 5000);
+}, 7000);
