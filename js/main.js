@@ -18,7 +18,6 @@ const startGame = () => {
         document.getElementById('close-popup').onclick = function(){
             document.getElementById('open-popup').style.visibility="hidden";
         }
-       
     }
 }
 

@@ -16,16 +16,17 @@ const changeTurn = () =>{
     //si el turno esta en X lo cambia a O y al reves
     turn = (turn == 'X') ? 'O': 'X'; 
         if(turn == 'X'){
+            // turn = 'O'
             document.getElementById('first','first-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
             document.getElementById('time').innerHTML = `X ${sessionStorage.getItem("name1")}`
             document.getElementById('second').innerHTML = ""         
         }else if(turn== 'O'){
+            // turn = 'X'
             document.getElementById('second', 'second-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`
             document.getElementById('time').innerHTML = `O ${sessionStorage.getItem("name2")}`
             document.getElementById('first').innerHTML = ""
         }
 };
-
 
 //  funcion para marcar la celda seleccionada
 
@@ -33,19 +34,17 @@ const changeTurn = () =>{
         if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
             board[id]= turn              //almacenamos el turno sea la X o O
             document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
-         }
-     }
+        }
+    }
 
 //llamamos a la funcion de marcar celda
 
 const PressClick = (position) =>{
     if(counter<8){
-        console.log("Estoy contando hasta 8")
         markCell(position) 
         checkWinner()
         changeTurn()
         counter++
-        console.log(counter)
     }else if(counter=9){
         markCell(position) 
         checkWinner()
@@ -56,59 +55,34 @@ const PressClick = (position) =>{
     }
 }
 // funcion para validar ganador
-let letra = ""
+let letter = ""
 const checkWinner = () =>{
-    let letras = ["X","O"]
-    for(a=0; a<letras.length; a++){
-        letra = letras[a]
+    let character = ["X","O"]
+    for(a=0; a<character.length; a++){
+        letter = character[a]
 
-        if(board[0] == letra && board[1] == letra && board[2]== letra){MostrarGanador(letra)}
-        if(board[3] == letra && board[4] == letra && board[5]== letra){MostrarGanador(letra)}
-        if(board[6] == letra && board[7] == letra && board[8]== letra){MostrarGanador(letra)}
-        if(board[0] == letra && board[3] == letra && board[6]== letra){MostrarGanador(letra)}
-        if(board[1] == letra && board[4] == letra && board[7]== letra){MostrarGanador(letra)}
-        if(board[2] == letra && board[5] == letra && board[8]== letra){MostrarGanador(letra)}
-        if(board[0] == letra && board[4] == letra && board[8]== letra){MostrarGanador(letra)}
-        if(board[2] == letra && board[4] == letra && board[6]== letra){MostrarGanador(letra)}
+        if(board[0] == letter && board[1] == letter && board[2]== letter){showWinner(letter)}
+        if(board[3] == letter && board[4] == letter && board[5]== letter){showWinner(letter)}
+        if(board[6] == letter && board[7] == letter && board[8]== letter){showWinner(letter)}
+        if(board[0] == letter && board[3] == letter && board[6]== letter){showWinner(letter)}
+        if(board[1] == letter && board[4] == letter && board[7]== letter){showWinner(letter)}
+        if(board[2] == letter && board[5] == letter && board[8]== letter){showWinner(letter)}
+        if(board[0] == letter && board[4] == letter && board[8]== letter){showWinner(letter)}
+        if(board[2] == letter && board[4] == letter && board[6]== letter){showWinner(letter)}
     }
 }
 
 // mostrar ganador
 
-const MostrarGanador = (letra) =>{
-    if(letra == 'X'){
+const showWinner = (letter) =>{
+    if(letter == 'X'){
+        sessionStorage.setItem('winplayer',letter)
         window.location.href ="../pages/winner.html"
-    }else if(letra == 'O'){
+    }else if(letter == 'O'){
+        sessionStorage.setItem('winplayer',letter)
         window.location.href ="../pages/winner.html"
     }else{}
-    }
-
-
-//     //variables
-// let tiempoEspera= 15;
-// let segundos= tiempoEspera;
-// let tiempoDiv= document.querySelector("#tiempo");
-// let descuento;
-// ​
-// //funciones
-// const resetTiempo=()=>{
-//   segundos= tiempoEspera;
-//   if(descuento){
-//     clearInterval(descuento);
-//   }
-//   tiempoDiv.innerHTML=(`<p>${segundos}</p>`);
-//   descuento= setInterval(cadaSegundo, 1000);
-// };
-// ​
-// const cadaSegundo=()=>{
-//   segundos--;
-//   tiempoDiv.innerHTML=(`<p>${segundos}</p>`);
-//   if(segundos==0){
-//     prompt("tiempo agotado");
-//   }
-// };
-// ​
-// resetTiempo();
+}
 
 
 
