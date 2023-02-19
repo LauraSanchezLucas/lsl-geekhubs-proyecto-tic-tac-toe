@@ -1,9 +1,3 @@
-// collect names from sessionStoradge and paint into P1 and P2
-// const PlayerName = () => {
-//     document.getElementById("P1").innerHTML = sessionStorage.getItem("name1")
-//     document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
-// }
-// PlayerName();
 document.getElementById("P1").innerHTML = sessionStorage.getItem("name1");
 document.getElementById("P2").innerHTML = sessionStorage.getItem("name2");
 //Function to change turn
@@ -40,10 +34,10 @@ const PressClick = (position) =>{
 // Declare my board
 let board = ["","","","","","","","",""];
 // Function to mark cells
-const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
-    if(board[id] === ""){    //si la celda esta vacia realizaremos lo siguiente
-        board[id]= turn              //almacenamos el turno sea la X o O
-        document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
+const markCell = (id) =>{     //gets id from html (board)
+    if(board[id] === ""){    //if is empty
+        board[id]= turn              
+        document.getElementById(id).innerHTML = turn //write X or O in the cell
     }
 };
 // Function for winning combinations

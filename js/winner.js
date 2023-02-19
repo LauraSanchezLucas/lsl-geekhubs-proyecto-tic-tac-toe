@@ -1,6 +1,4 @@
-
 let winplayer = sessionStorage.getItem("winplayer");
-
 if(winplayer == "X"){
     document.getElementById("win").innerHTML = sessionStorage.getItem("name1")
 }else if(winplayer == "O"){
