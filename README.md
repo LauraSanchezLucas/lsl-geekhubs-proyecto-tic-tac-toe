@@ -12,6 +12,7 @@
   - All pages must be connected to each other. 
 </ul>
 </p>
+
 ## Player´s Guide
 ---
 |The game is played on a grid that's 3 squares by 3 squares.|<img src="./assets/grid.png"/>|
