@@ -1,4 +1,4 @@
-// funtion to save players names
+// function to save players names
 const startGame = () => {
     //declare both variables
     let player1 = document.getElementById("P1").value;
@@ -18,7 +18,7 @@ const startGame = () => {
         // The first parameter is the type of the event
     }
 }
-// funtion to close pop-up
+// function to close pop-up
 const notice =()=> {
   document.getElementById('open-popup').style.visibility="hidden";
 }

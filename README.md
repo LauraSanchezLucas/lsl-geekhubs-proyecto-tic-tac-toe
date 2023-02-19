@@ -57,10 +57,9 @@ Enjoy playing it.
 ---
 Laura Sánchez Lucas
 
-<!-- ## Información adicional
+## Additional information
 ---
-Esta es la sección que permite agregar más información de contexto al proyecto como alguna web de relevancia, proyectos similares o que hayan usado la misma tecnología. -->
-
+The confetti is taken from the following library: https://www.npmjs.com/package/js-confetti?activeTab=readme
 ## Licencia 
 ---
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.

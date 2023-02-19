@@ -1,66 +1,57 @@
-// collect names from sessionStoradge
-const PlayerName = () => {
-    document.getElementById("P1").innerHTML = sessionStorage.getItem("name1")
-    document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
-}
-PlayerName();
-
-let board = [0,0,0,0,0,0,0,0,0];
-
-//inicia el juego con X
+// collect names from sessionStoradge and paint into P1 and P2
+// const PlayerName = () => {
+//     document.getElementById("P1").innerHTML = sessionStorage.getItem("name1")
+//     document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
+// }
+// PlayerName();
+document.getElementById("P1").innerHTML = sessionStorage.getItem("name1");
+document.getElementById("P2").innerHTML = sessionStorage.getItem("name2");
+//Function to change turn
 let turn = 'X';     
 let counter = 0;
-
-// funcion para cambiar de turno
 const changeTurn = () =>{
-    //si el turno esta en X lo cambia a O y al reves
     turn = (turn == 'X') ? 'O': 'X'; 
-        if(turn == 'X'){
-            // turn = 'O'
-            document.getElementById('first','first-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`
-            document.getElementById('time').innerHTML = `X ${sessionStorage.getItem("name1")}`
-            document.getElementById('second').innerHTML = ""         
-        }else if(turn== 'O'){
-            // turn = 'X'
-            document.getElementById('second', 'second-player').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`
-            document.getElementById('time').innerHTML = `O ${sessionStorage.getItem("name2")}`
-            document.getElementById('first').innerHTML = ""
-        }
-};
-
-//  funcion para marcar la celda seleccionada
-
-    const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
-        if(board[id] === 0){    //si la celda esta vacia realizaremos lo siguiente
-            board[id]= turn              //almacenamos el turno sea la X o O
-            document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
-        }
+    if(turn == 'X'){
+        document.getElementById('first').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`;
+        document.getElementById('second').innerHTML = "";
+        document.getElementById('time').innerHTML = `X ${sessionStorage.getItem("name1")}`;      
+    }else if(turn== 'O'){
+        document.getElementById('second').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`;
+        document.getElementById('first').innerHTML = "";
+        document.getElementById('time').innerHTML = `O ${sessionStorage.getItem("name2")}`;
     }
-
-//llamamos a la funcion de marcar celda
-
+};
+// function of all game
 const PressClick = (position) =>{
     if(counter<8){
-        markCell(position) 
-        checkWinner()
-        changeTurn()
+        markCell(position);
+        checkWinner();
+        changeTurn();
         counter++
     }else if(counter=9){
-        markCell(position) 
-        checkWinner()
-        changeTurn()
+        markCell(position); 
+        checkWinner();
+        changeTurn();
         setTimeout(function(){
             window.location.href ="../pages/tie.html";
         }, 1000);
     }
-}
-// funcion para validar ganador
+};
+// Declare my board
+let board = ["","","","","","","","",""];
+// Function to mark cells
+const markCell = (id) =>{     //esta funcion debe recibir el id donde clickeo
+    if(board[id] === ""){    //si la celda esta vacia realizaremos lo siguiente
+        board[id]= turn              //almacenamos el turno sea la X o O
+        document.getElementById(id).innerHTML = turn //insertamos el turno en la celda 
+    }
+};
+// Function for winning combinations
 let letter = ""
 const checkWinner = () =>{
     let character = ["X","O"]
-    for(a=0; a<character.length; a++){
-        letter = character[a]
-
+    for(i=0; i<character.length; i++){
+        letter = character[i]
         if(board[0] == letter && board[1] == letter && board[2]== letter){showWinner(letter)}
         if(board[3] == letter && board[4] == letter && board[5]== letter){showWinner(letter)}
         if(board[6] == letter && board[7] == letter && board[8]== letter){showWinner(letter)}
@@ -70,26 +61,14 @@ const checkWinner = () =>{
         if(board[0] == letter && board[4] == letter && board[8]== letter){showWinner(letter)}
         if(board[2] == letter && board[4] == letter && board[6]== letter){showWinner(letter)}
     }
-}
-
-// mostrar ganador
-
+};
+// function show Winner
 const showWinner = (letter) =>{
     if(letter == 'X'){
-        sessionStorage.setItem('winplayer',letter)
-        window.location.href ="../pages/winner.html"
+        sessionStorage.setItem('winplayer',letter);
+        window.location.href ="../pages/winner.html";
     }else if(letter == 'O'){
-        sessionStorage.setItem('winplayer',letter)
-        window.location.href ="../pages/winner.html"
+        sessionStorage.setItem('winplayer',letter);
+        window.location.href ="../pages/winner.html";
     }else{}
-}
-
-
-
-
-
-
-
-
-
-
+};
