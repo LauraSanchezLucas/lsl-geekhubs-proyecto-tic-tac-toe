@@ -48,8 +48,8 @@ Enjoy playing it.
 ## Play at
 --- 
 
-- https://super-tic-tac-toe-jassi.netlify.app/
-
+- https://laurasanchezlucas.github.io/lsl-geekhubs-proyecto-tic-tac-toe/
+  
 ## Author
 ---
 Laura Sánchez Lucas
