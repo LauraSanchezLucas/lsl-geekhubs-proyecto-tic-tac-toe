@@ -18,11 +18,14 @@
     <nav class="navbar-logo navbar-logo-game">
         <a href="../index.html" class="logo"></a>
     </nav>
+    <!-- main game -->
     <div class="container-fluid box">
         <div class="row justify-content-center align-items-center box">
+            <!-- turn only mobile version -->
             <div class="justify-content-center align-items-center d-flex">
                 <span class='turn-now fs-1'><strong>Turn :</strong><p id="time"></p></span>
             </div>
+            <!-- board -->
             <div class="col-12 col-lg-4 order-2 d-flex justify-content-center align-items-center">
                 <div class="container box1">
                     <div id="0" onclick="PressClick(0)" class="cell border-end border-dark border-3"></div> 
@@ -36,6 +39,7 @@
                     <div id="8" onclick="PressClick(8)" class="cell"></div>
                 </div>
             </div>
+            <!-- card turn -->
             <div class="col-8 col-lg-4 order-1 text-center">
                 <div class="container-fluid">
                     <div class="card card1 card3 mt-3">
@@ -56,7 +60,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="../js/game.js"></script>

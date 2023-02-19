@@ -1,4 +1,4 @@
-// funcion para recoger los nombres del sessionStoradge y enviarlos a pag. game
+// collect names from sessionStoradge
 const PlayerName = () => {
     document.getElementById("P1").innerHTML = sessionStorage.getItem("name1")
     document.getElementById("P2").innerHTML = sessionStorage.getItem("name2")
