@@ -6,11 +6,11 @@ let counter = 0;
 const changeTurn = () =>{
     turn = (turn == 'X') ? 'O': 'X'; 
     if(turn == 'X'){
-        document.getElementById('first').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`;
+        document.getElementById('first').innerHTML = `YOUR TIME...${sessionStorage.getItem("name1")} GOOD LUCK!!!`;
         document.getElementById('second').innerHTML = "";
         document.getElementById('time').innerHTML = `X ${sessionStorage.getItem("name1")}`;      
     }else if(turn== 'O'){
-        document.getElementById('second').innerHTML = `YOU´RE TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`;
+        document.getElementById('second').innerHTML = `YOUR TIME...${sessionStorage.getItem("name2")} GOOD LUCK!!!`;
         document.getElementById('first').innerHTML = "";
         document.getElementById('time').innerHTML = `O ${sessionStorage.getItem("name2")}`;
     }
