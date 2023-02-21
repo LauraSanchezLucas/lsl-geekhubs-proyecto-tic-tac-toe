@@ -21,7 +21,7 @@
 |The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.|<img src="./assets/win.png"/>|
 |<img src="./assets/tie.png"/>|When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.|
 More views in the game
-|![image](./assets/players.png) |![image](./assets/winner.png)|![image](./assets/tie-end.png)|
+![image](./assets/players.png) |![image](./assets/winner.png)|![image](./assets/tie-end.png)|
 |-|-|-|
 ## Built With
 This project was built using these technologies.

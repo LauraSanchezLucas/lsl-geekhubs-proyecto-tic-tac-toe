@@ -20,12 +20,10 @@ const PressClick = (position) =>{
     if(counter<8){
         markCell(position);
         checkWinner();
-        changeTurn();
         counter++
     }else if(counter=9){
         markCell(position); 
         checkWinner();
-        changeTurn();
         setTimeout(function(){
             window.location.href ="../pages/tie.html";
         }, 1000);
@@ -38,6 +36,7 @@ const markCell = (id) =>{     //gets id from html (board)
     if(board[id] === ""){    //if is empty
         board[id]= turn              
         document.getElementById(id).innerHTML = turn //write X or O in the cell
+        changeTurn();
     }
 };
 // Function for winning combinations
